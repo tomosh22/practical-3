@@ -1,5 +1,5 @@
 ---
-title: Managing a team project
+title: Managing a Team Project
 author: Jordan Barnes
 ---
 
