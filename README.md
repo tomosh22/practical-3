@@ -230,7 +230,7 @@ include the following:
 
 * An overview of how the team was organised and managed (10%)
 * A brief summary of your contribution(s) to the case study (e.g. the
-  chosen specifcation(s) you have been working on) and some of your
+  chosen specification(s) you have been working on) and some of your
   coding solution(s) (10%)
 * Personal log of work undertaken (20%)
 * Reflection on your contributions to the team and how it will affect
