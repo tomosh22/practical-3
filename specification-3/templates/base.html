@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+<!--This creates a header for each page, which hyperlinks to each assessment page-->
+<div>Assessment Three Website :
+    <a href="/">Home</a>
+    <a href="/assessment_one">Assessment One</a>
+    <a href="/assessment_two">Assessment Two</a>
+    <a href="/assessment_three">Assessment Three</a>
+    <a href="/assessment_four">Assessment Four</a>
+</div>
+<!--Variables, which are defined in website.py, which are then displayed-->
+<hr>
+<p>{{ general_page_description}}</p>
+<hr>
+<pre>{{ code }}</pre>
+<hr>
+<pre>{{ documentation }}</pre>
+{% block content %}{% endblock %}
+</body>
+</html>
