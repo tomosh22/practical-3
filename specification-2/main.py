@@ -17,5 +17,3 @@ if __name__ ==  "__main__":
         print(str(x)+":"+images[x])
     img_choice = int(input("Which image index?"))
     func(images[img_choice])
-
-

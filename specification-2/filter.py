@@ -86,5 +86,3 @@ def filter(img):
     print(new_name)
     image.save(new_name, "JPEG")
     image.show()
-
-
