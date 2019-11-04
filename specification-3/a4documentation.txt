@@ -1,0 +1,7 @@
+Brief description
+
+Objectives :
+    Investigate Python libraries to focus your solution around.
+    Plan your solution before development.
+    Develop your program solution.
+    Test your program.
