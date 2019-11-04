@@ -1,5 +1,6 @@
 Assessment one reads through a textfile and displays several graphs; this includes number of each letter and the
-number of each punctuation symbol. Graphs are output using the matplotlib library.
+number of each punctuation symbol. Graphs are output using the matplotlib library. The program can be used on any
+textfile required.
 
 Objectives :
 Read in a *.txt* file and parse the content.
