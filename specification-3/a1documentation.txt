@@ -1,0 +1,19 @@
+Assessment one reads through a textfile and displays several graphs; this includes number of each letter and the
+number of each punctuation symbol. Graphs are output using the matplotlib library. The program can be used on any
+textfile required.
+
+Objectives :
+Read in a *.txt* file and parse the content.
+    The program is able to read through the content of textfiles
+Perform a frequency analysis of the characters and words in the text
+file.
+    The program loops through the contents of the textfile, and stores each possible output
+Output the frequency of the most occurring words in the text file to
+a CSV file.
+    The program successfully lists the most commonly occuring words
+Present your frequency analysis of the characters visually using the
+Matplotlib plotting library.
+    The program outputs several graphs using matplotlib
+Produce a Markdown file in your repository directory that combines
+your findings in one place.
+    The program produces a markdown file
