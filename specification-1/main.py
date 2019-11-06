@@ -7,7 +7,7 @@ def run():
     print("2) Specify the file by inputting the name with the file extension")
     filename = str(input("Enter filename: "))
     print("3) Specify the character set used within the text file you wish to use")
-    print("|utf-8|ascii|utf-16|utf-32|")
+    print("|Recommended to use 'utf-8'|utf-8|ascii|utf-16|utf-32|")
     encoding = str(input("Enter character-set-encoding: "))
     try:
         f = open(filename,"r",encoding=encoding)   # Opens the specified text file and reads from it

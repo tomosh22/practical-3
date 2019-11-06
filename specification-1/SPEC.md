@@ -39,4 +39,3 @@ file. You should then present your findings visually using the python
 #### Libraries to investigate
 
 * [Matplotlib](https://matplotlib.org/)
-
