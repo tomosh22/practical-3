@@ -82,7 +82,6 @@ def filter(img):
 
             # Return new image
             return new
-    new_name = "." + img.split(".")[1] + filter + ".jpg"
-    print(new_name)
+    new_name = ".." + img[2:].split(".")[0] + filter + ".jpg"
     image.save(new_name, "JPEG")
     image.show()
