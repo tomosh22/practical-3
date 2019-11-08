@@ -72,7 +72,7 @@ value, but instead, it is limited to operating on ten values which are then writ
 the upper limit of the for loop that decides the quantity of most used values to be written to the csv could be user
 input so that the user decides how many most used words are written to the file.
 
-Spec 1 - V2 - 99.9% Complete - 05/11/2019 - 23:36
+Spec 1 - V2 - 99.9% Complete - 08/11/2019 - 15:00
 + Wrote a report in markdown named "README.md"
 + Wrote and added 1,000 word report named "Assessment3-Specification1.docx" within the folder "specification-1".
 
