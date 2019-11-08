@@ -1,3 +1,4 @@
+##Produce a Markdown file in your repository directory that combines your findings in one place.
 ###1 Read in a .txt file and parse the content.
 From previous experience during A-level I knew that I could use the method ".open()" in order to retrieve data from  
 a text file. However at the time of doing this, I was not using the provided text document but instead my own created  
@@ -37,10 +38,22 @@ the bubble sort to ten items which is much more faster than sorting the whole 2D
 When it came to writing the top ten most used words, I simply used a CSV library, to write the top ten words. 
 
 ###4 Present your frequency analysis of the characters visually using the Matplotlib plotting library.
+Lastly presenting the frequency analysis. This was very simple at first, however I ran into a problem which I learned  
+quite a bit from. At the time whenever I ran the "ObjectivesMet4.py" which plots the punctuation, the "comma"s return value is  
+incorrect this is evident because when this is ran on the text file I wrote, it returns 255 "commas" despite there being only 1.  
+Furthermore when this is run on the STAR WARS script it returns around 30,000 "commas" which is also wrong. Interestingly,  
+upon removing the "count" for "commas" the error then moves onto "full stops". Upon further investigation the bug was tracked  
+all the way back to version "ObjectivesMet2.py" Another step I took was to determine, is this problem also within the alphabet  
+characters or only in the punctuation characters. To determine this fact, I separated alphabet-character and punctuation-characters  
+into different arrays. Then checked if the values for each element of each array is correct. Upon doing so I realized that   
+1 ~ When I told the program to count spaces, it was not, this is because I did not specify to count spaces, but instead  
+to count "nothing". Within the code I put [count("")] instead of [count(" ")] the latter is correct because I should be  
+counting white spaces, not "nothing". 2 ~ when it came to plotting, the visual graph itself relies on the order of names  
+and order of integer values to be in the corresponding order such that when plotting data, the names and values are plotted  
+separately like so: names = [column1, column2, column3,...] values = [14,15,16] the value 14 will be plotted with the name  
+"column1", value 15 will be plotted with the name "column2" and so on, the data is plotted according to equal index values.  
+What I was doing wrong, was that, in my names array "space" came first, but in my values array "fullstops" came first,  
+hence the number of fullstops were being plotted for spaces. Therefore the "30,000 commas" value must have come about from  
+"nothing" being counted instead of "spaces" and combined with the "names" and "values" array being out of order it appeared  
+that 30,000 commas were being counted, but in fact 30,000 "nothing" were being counted and displayed under commas.  
 
-Lastly presenting the frequency analysis. This was very simple as I only ran into one problem which  
-is explained in much more detail within "_Notes" (the first paragraph). The documentation is very  
-simple and easy to follow, I took an example and some other functions and produced the bar chart.
-However I learned that when plotting information, I learned that when specifying the names and  
-the values to be plotted, the names and values placement or index must correspond otherwise values  
-will be plotted against incorrect names. 
