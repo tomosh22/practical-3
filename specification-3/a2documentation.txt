@@ -1,15 +1,8 @@
-Brief description
+<Brief description>
 
-Objectives :
-Read in image files and store them in an appropriate collection
-ready for modification.
-    The program is able to read image files and store them.
-Convert the images to thumbnails and name the new files
-appropriately.
-    The program is able to convert images to thumbnails and give them the appropriate name.
-Apply various filters to the images using the *ImageFilter* module.
-    The program can add filters to the images.
-Modify the RGB values of images to produce a new filter.
-    The program is able to modify RGB values.
-Experiment with the Pillow library and its modules and save what you
-have produced.
+Objectives:
+• Read in image files and store them in an appropriate collection ready for modification.
+• Convert the images to thumbnails and name the new files appropriately.
+• Apply various filters to the images using the ImageFilter module.
+• Modify the RGB values of images to produce a new filter.
+• Experiment with the Pillow library and its modules and save what you have produced.
