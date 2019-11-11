@@ -75,7 +75,7 @@ def run():
         tempCount = 0
         tempWord = theArray[i]
         if theArray[i] != "" and theArray[i] != "\n" and theArray[i] != "'":
-            for i2 in range(0,len(theArray)):
+            for i2 in range(i,len(theArray)):
                 if theArray[i2] == tempWord:
                     theArray[i2] = ""
                     tempCount += 1

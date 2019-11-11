@@ -5,8 +5,8 @@ perform the neccasary calculations throughout various loops, and then output the
 MatPlotLib library, as well as producing a Markdown file.
 
 Objectives:
-• Read in a .txt file and parse the content.
-• Perform a frequency analysis of the characters and words in the text file.
-• Output the frequency of the most occurring words in the text file to a CSV file.
-• Present your frequency analysis of the characters visually using the Matplotlib plotting library.
-• Produce a Markdown file in your repository directory that combines your findings in one place.
+- Read in a .txt file and parse the content.
+- Perform a frequency analysis of the characters and words in the text file.
+- Output the frequency of the most occurring words in the text file to a CSV file.
+- Present your frequency analysis of the characters visually using the Matplotlib plotting library.
+- Produce a Markdown file in your repository directory that combines your findings in one place.

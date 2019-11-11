@@ -7,7 +7,7 @@ python library, has been planned and developed and tested. Tests included making
 result in a crash, do not cause a crash. This can be seen if the user tries to operate on undefined sets.
 
 Objectives:
-• Investigate Python libraries to focus your solution around.
-• Plan your solution before development.
-• Develop your program solution.
-• Test your program.
+- Investigate Python libraries to focus your solution around.
+- Plan your solution before development.
+- Develop your program solution.
+- Test your program.

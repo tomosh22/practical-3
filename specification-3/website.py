@@ -8,7 +8,7 @@ from flask import render_template
 #   templates.
 @app.route('/')
 def home():
-    return render_template('index.html',
+    return render_template('homepage.html',
                            title='Home',
                            general_page_description='Welcome to the homepage of our website for our project.'
                                                     'You can use the navigation bar to find code for each assessment')

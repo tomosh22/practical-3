@@ -6,7 +6,7 @@ the Flask framework, has the relevant pages which each contain the code of the r
 of what each assessment is achieving.
 
 Objectives:
-• Install the Python web-framework Flask.
-• Produce a simple home page that links/routes to other pages that display your code.
-• Produce a web page for each of the other specifications and present your code on them.
-• Produce a brief description explaining what the code does and how it meets the objective of the specification.
+- Install the Python web-framework Flask.
+- Produce a simple home page that links/routes to other pages that display your code.
+- Produce a web page for each of the other specifications and present your code on them.
+- Produce a brief description explaining what the code does and how it meets the objective of the specification.
