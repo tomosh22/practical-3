@@ -1,6 +1,8 @@
 Assessment one reads through a textfile and displays several graphs; this includes number of each letter and the
 number of each punctuation symbol. Graphs are output using the matplotlib library. The program can be used on any
-textfile required.
+textfile required. This meets the objectives of the specification as the application can read through a textfile,
+perform the neccasary calculations throughout various loops, and then output the results on bar charts using the
+MatPlotLib library, as well as producing a Markdown file.
 
 Objectives:
 • Read in a .txt file and parse the content.

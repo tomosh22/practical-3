@@ -1,7 +1,9 @@
 This is the website code which is based around using the flask library. It involves using one template across four
 pages (assessments) which each have small variations which are managed using variables. Code and documentation are read
 from textfiles rather than being stored within the program, as this made it much easier to have an easy-to-access
-location to replace out-dated code.
+location to replace out-dated code. The code meets the objectives of the specification, as the website is built using
+the Flask framework, has the relevant pages which each contain the code of the respective assessments and a description
+of what each assessment is achieving.
 
 Objectives:
 • Install the Python web-framework Flask.
