@@ -1,7 +1,7 @@
 This is the website code which is based around using the flask library. It involves using one template across four
 pages (assessments) which each have small variations which are managed using variables. Code and documentation are read
-from textfiles rather than being stored within the program. Trying to store code within a string caused the program to
-break and documentation became very messy due to being indented, so was being split as quite a lot of different strings.
+from textfiles rather than being stored within the program, as this made it much easier to have an easy-to-access
+location to replace out-dated code.
 
 Objectives:
 • Install the Python web-framework Flask.
