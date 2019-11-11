@@ -1,6 +1,7 @@
 from os import listdir
 from filter import filter
 from thumbnail import thumbnail
+
 if __name__ ==  "__main__":
     images = []
     for img in listdir("../resources/img/spec2-images"):
@@ -17,3 +18,4 @@ if __name__ ==  "__main__":
         print(str(x)+":"+images[x])
     img_choice = int(input("Which image index?"))
     func(images[img_choice])
+

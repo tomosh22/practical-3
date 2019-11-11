@@ -9,7 +9,7 @@ verify_ssl = true
 flask = "*"
 matplotlib = "*"
 pillow = "*"
-csv = "*"
+#csv = "*"
 
 [requires]
 python_version = "3.7"
