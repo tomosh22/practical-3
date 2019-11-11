@@ -1,4 +1,10 @@
-<Brief description>
+Assessment four calculates the cartesian product of two sets. The user inputs two sets, which can then be used to give a
+list of the possible outputs. It makes use of the tkinter library which can be used to create an interactive GUI. This
+has been utilized through: buttons; which when pressed add sets to a list or perform operations, labels , frames (
+used for outputting strings/text that the user can see) and message boxes; which are used to tell the user if there are
+any errors with what they are trying to do. The application meets the assessment objectives as it makes use of a
+python library, has been planned and developed and tested. Tests included making sure that any user inputs which would
+result in a crash, do not cause a crash. This can be seen if the user tries to operate on undefined sets.
 
 Objectives:
 - Investigate Python libraries to focus your solution around.
