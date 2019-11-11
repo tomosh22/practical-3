@@ -1,4 +1,56 @@
-from PIL import Image,ImageFilter
+from PIL import Image, ImageFilter
+
+
+def get_pixel(image, i, j):
+  # Inside image bounds?
+  width, height = image.size
+  if i > width or j > height:
+    return None
+
+  # Get Pixel
+  pixel = image.getpixel((i, j))
+  return pixel
+
+
+def convert_primary(image):
+  # Get size
+  image = Image.open(image)
+  width, height = image.size
+
+  # Create new Image and a Pixel Map
+  #image = Image.open(image)
+  pixels = image.load()
+
+  # Transform to primary
+  for i in range(width):
+    for j in range(height):
+      # Get Pixel
+      pixel = get_pixel(image, i, j)
+
+      # Get R, G, B values (This are int from 0 to 255)
+      red =  pixel[0]
+      green = pixel[1]
+      blue = pixel[2]
+
+      # Transform to primary
+      if red > 127:
+        red = 255
+      else:
+        red = 0
+      if green > 127:
+        green = 255
+      else:
+        green = 0
+      if blue > 127:
+        blue = 255
+      else:
+        blue = 0
+
+      # Set Pixel in new image
+      pixels[i, j] = (int(red), int(green), int(blue))
+
+  # Return new image
+  return image
 
 
 def filter(img):
@@ -39,80 +91,11 @@ def filter(img):
     elif filter == "sm+":
         image = image.filter(ImageFilter.SMOOTH_MORE)
     elif filter == "g":
-        img = Image.open('<ISERTIMGHERE>').convert('LA')
-        img.save('greyscale.png')
+        image = Image.open(img).convert('L')
     elif filter == "p":
-        #Convert to Primary and save
-        new = convert_primary(open_image('<ISERTIMGHERe>'))
-        save_image(new, 'Prinny_primary.png')
-    new_name = "." + img.split(".")[1] + filter + ".jpg"
+        image = convert_primary(img)
+    new_name = ".." + img[2:].split(".")[0] + filter + ".jpg"
     print(new_name)
     image.save(new_name, "JPEG")
     image.show()
 
-
-
-# Open an Image
-def open_image(path):
-  newImage = Image.open(path)
-  return newImage
-
-# Save Image
-def save_image(image, path):
-  image.save(path, 'png')
-
-# Create a new image with the given size
-def create_image(i, j):
-  image = Image.new("RGB", (i, j), "white")
-  return image
-
-# Get the pixel from the given image
-def get_pixel(image, i, j):
-  # Inside image bounds?
-  width, height = image.size
-  if i > width or j > height:
-    return None
-
-  # Get Pixel
-  pixel = image.getpixel((i, j))
-  return pixel
-
-# Create a Primary Colors version of the image
-def convert_primary(image):
-  # Get size
-  width, height = image.size
-
-  # Create new Image and a Pixel Map
-  new = create_image(width, height)
-  pixels = new.load()
-
-  # Transform to primary
-  for i in range(width):
-    for j in range(height):
-      # Get Pixel
-      pixel = get_pixel(image, i, j)
-
-      # Get R, G, B values (This are int from 0 to 255)
-      red =   pixel[0]
-      green = pixel[1]
-      blue =  pixel[2]
-
-      # Transform to primary
-      if red > 127:
-        red = 255
-      else:
-        red = 0
-      if green > 127:
-        green = 255
-      else:
-        green = 0
-      if blue > 127:
-        blue = 255
-      else:
-        blue = 0
-
-      # Set Pixel in new image
-      pixels[i, j] = (int(red), int(green), int(blue))
-
-  # Return new image
-  return new
