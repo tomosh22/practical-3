@@ -1,11 +1,11 @@
 So far...
+(This document was created during development - all useful information has been placed within "README.md")
 NOTE: There are different versions of this program stored within multiple python files, to differentiate the files and
 their versions, there are four objectives
 NOTE: The files with the name prefix "BUILDING_" are python files in which the elements that make up this program
 were first built and tested in, before being made apart of the main python file.
 NOTE: The files with the name prefix "PATCHING_" are python files in which bugs were found in the main file, these
 bugs are contained and separated within these files to be patched and then patched within the main file.
-
 
 I have run into a new problem, that is, whenever I run the "ObjectivesMet4.py" which plots the punctuation, "comma"s return value
 is incorrect this is evident because when this is ran on the text file I wrote, it returns 255 "commas" despite there
@@ -36,3 +36,43 @@ Therefore I have to build an algorithm that goes through the words and removes o
 So that when the words are counted a text file containing: "right right right." would return [["right",3]]
     Furthermore I should probably update the program to take in characters the same way words are accounted for, this
 would ensure every single character is accounted for.
+
+New Error: UnicodeDecodeError
+    When I developed this software I did not use the provided text document. Despite this
+the software meets the specifications. However when using the provided text document it generates the above error.
+Basically, there is a character within the provided document that maps to "UNDEFINED" which then generates an error
+and halts the program. After a bit of searching I have found that a single character is that cause of this error, this
+character is... " ” " (The one in quotations). Luckily it is not a mix of multiple characters, just a single character
+propagated through out the text. This is lucky because I could possibly create a solution that removes " ” " from the
+text file and then use .read(), however if another text file with the same problem but different character was causing
+the problem then the program would no longer work, however it would work with this text file and any without any
+characters that do not map to UNDEFINED. Or, I could develop a solution that when a UnicodeDecodeError is returned, a
+try catch exception could be used to map that specific character to a question mark or something else, but in order to
+achieve this I would need extensive knowledge of the .read() method. However this would create a solution that works
+with other text files that contain different characters that map to UNDEFINED characters.
+Interestingly, if replace all is used on " ” " to replace with something such as a space, my program then works. But what
+about other characters that map to undefined.
+    CHOICES: Develop solution for this specific character " ” ", or,
+Develop solution for characters mapping to UNDEFINED characters.
+    ... Turns out. That, I. Did not. Have to think of any of this. All I had to do, was, specify the encoding...
+[f = open("textfile1","r")] -> [f = open("textfile1","r",encoding="utf8")]
+
+New Problem: Very Slow
+    The program is extremely slow when it is run with the book.txt file provided. I believe it is due to the bubble sort
+implemented to find the top ten most used words. I should probably switch this out for the quick sort.
+Instead of using a sort, use a for loop to find the ten most used words.
+    I've realised something. I could modify the code to mix objective 2 and 3 in order to run a lot faster. However I
+could also leave it as it is and add features such as allowing the user to determine which how many of the top most used
+words they want written to the csv file. But both options require entirely different structures to the code, instead of
+choosing one, I could choose both, by having both structures within the code and allow the user to choose whichever one,
+a quick scan, or a long scan with the quantity of the most used words written to the csv file determined by the user.
+    And make it so that the name of the file scanned is determined by the user.
+Scrap what I previously said. The bubble sort has been made more efficient, since it does not operate on every single
+value, but instead, it is limited to operating on ten values which are then written to the csv file. I could make it so
+the upper limit of the for loop that decides the quantity of most used values to be written to the csv could be user
+input so that the user decides how many most used words are written to the file.
+
+Spec 1 - V2 - 99.9% Complete - 08/11/2019 - 15:00
++ Wrote a report in markdown named "README.md"
++ Wrote and added 1,000 word report named "Assessment3-Specification1.docx" within the folder "specification-1".
+

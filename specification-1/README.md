@@ -1,42 +1,59 @@
-### Specification 1
+##Produce a Markdown file in your repository directory that combines your findings in one place.
+###1 Read in a .txt file and parse the content.
+From previous experience during A-level I knew that I could use the method ".open()" in order to retrieve data from  
+a text file. However at the time of doing this, I was not using the provided text document but instead my own created  
+text files. As a result, near the end of development for this program, when I discovered the provided text document  
+it did not work on the first try. This caused me to have to learn something new, which is, the encoding can be specified with the  
+.open() method, such that when a text file is opened the characters within the text file are from a certain character  
+set, the corresponding character set must be specified in order to validly parse the contents, hence, the encoding.  
+Within this section the user must specify the text file's name and encoding, I used try-catch-exceptions so that if the  
+user enters incorrect data the program simply starts again. However this is not true if the user enters an  
+incompatible encoding with a text file, the program crashes - this is because a try-catch-exception cannot be used in  
+this case because an error is not returned from the line of code within the try-catch-exception that is executed,  
+but instead the error is returned from another python file where the character set is contained separate from my own  
+creation. Lastly the contents of the text file is stored within a string for later manipulation.
 
-In this challenge you are going to be exploring frequency analysis of
-large text files and producing a visual way of presenting your
-analysis results. Write a program that takes a large text file and
-perform a frequency analysis of the characters and words in that
-file. You should then present your findings visually using the python
-2D graph plotting library, Matplotlib.
+###2 Perform a frequency analysis of the characters and words in the text file.
 
-#### Objectives
+In order for my program to perform a frequency analysis of the characters I simply used .count() to assign  
+the quantity of a specified letter to a variable name that corresponds to the character it tracks, for all upper  
+and lower case letters, along with punctuation.  
+Interestingly, the program treats "right" and "right." as two different words because of the full-stop in the  
+second word. This needed to be fixed as it was leading to inaccurate word counts. Hence the next block of code  
+removes most punctuation, some are not removed due to them being apart of the word i.e "can't". This behaviour of  
+inaccurate word counts also applies to upper and lower case letters such that "Right" and "right" are also different.  
+Therefore upper-case letters had to be replaced with lower case letters - how this is achieved is explained as a  
+multi-line comment within the code itself. Once these two steps have been executed a new array is then derived    
+from this array, which contains each word as an element of the new array. Using .split() to achieve this.  
+Lastly a word count is executed using the new array containing each word, this is achieved by using a nested for  
+loop. Which firstly selects the word, then iterates through the entire array increasing a counter each time a  
+duplicate word is found. This counter and the word being counted when the nested for loop has finished searching for  
+duplicates is then added to another 2D array to then be manipulated later in the program. 
 
-* Read in a *.txt* file and parse the content.
-* Perform a frequency analysis of the characters and words in the text
-  file.
-* Output the frequency of the most occurring words in the text file to
-  a CSV file.
-* Present your frequency analysis of the characters visually using the
-  Matplotlib plotting library.
-* Produce a Markdown file in your repository directory that combines
-  your findings in one place.
+###3 Output the frequency of the most occurring words in the text file to a CSV file.
+To write the most frequent words to a CSV file I first needed a way of calculating the most frequent words.  
+Since each unique word and word-count was stored in a 2D array I could simply use a bubble sort on the whole 2D array.  
+However this proved extremely inefficient, I was only writing the top ten most used words to a CSV file, hence I limited  
+the bubble sort to ten items which is much more faster than sorting the whole 2D array.  
+When it came to writing the top ten most used words, I simply used a CSV library, to write the top ten words. 
 
-#### Learning Outcomes
-
-* To be able to investigate a libraries' documentation page to produce
-  code that satisfies an objective.
-* To be able to handle the reading and writing of files.
-* To investigate suitable methods of analysing large quantities of
-  text.
-* To learn how to present your findings visually, so that someone else
-  can understand your findings.
-
-#### Concepts to consider
-
-* File IO
-* Collections
-* String Manipulation
-* Sorting methods
-
-#### Libraries to investigate
-
-* [Matplotlib](https://matplotlib.org/)
+###4 Present your frequency analysis of the characters visually using the Matplotlib plotting library.
+Lastly presenting the frequency analysis. This was very simple at first, however I ran into a problem which I learned  
+quite a bit from. At the time whenever I ran the "ObjectivesMet4.py" which plots the punctuation, the "comma"s return value is  
+incorrect this is evident because when this is ran on the text file I wrote, it returns 255 "commas" despite there being only 1.  
+Furthermore when this is run on the STAR WARS script it returns around 30,000 "commas" which is also wrong. Interestingly,  
+upon removing the "count" for "commas" the error then moves onto "full stops". Upon further investigation the bug was tracked  
+all the way back to version "ObjectivesMet2.py" Another step I took was to determine, is this problem also within the alphabet  
+characters or only in the punctuation characters. To determine this fact, I separated alphabet-character and punctuation-characters  
+into different arrays. Then checked if the values for each element of each array is correct. Upon doing so I realized that   
+1 ~ When I told the program to count spaces, it was not, this is because I did not specify to count spaces, but instead  
+to count "nothing". Within the code I put [count("")] instead of [count(" ")] the latter is correct because I should be  
+counting white spaces, not "nothing". 2 ~ when it came to plotting, the visual graph itself relies on the order of names  
+and order of integer values to be in the corresponding order such that when plotting data, the names and values are plotted  
+separately like so: names = [column1, column2, column3,...] values = [14,15,16] the value 14 will be plotted with the name  
+"column1", value 15 will be plotted with the name "column2" and so on, the data is plotted according to equal index values.  
+What I was doing wrong, was that, in my names array "space" came first, but in my values array "fullstops" came first,  
+hence the number of fullstops were being plotted for spaces. Therefore the "30,000 commas" value must have come about from  
+"nothing" being counted instead of "spaces" and combined with the "names" and "values" array being out of order it appeared  
+that 30,000 commas were being counted, but in fact 30,000 "nothing" were being counted and displayed under commas.  
 
