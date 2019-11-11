@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>{{ title }}</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assessment_one">Assessment One</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assessment_two">Assessment Two</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assessment_three">Assessment Three</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/assessment_four">Assessment Four</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron text-center">
+  <h1>Project 3</h1>
+  <p>By Seb L, Callam B, Lee T, Tom O and Zayn I.</p>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>Spec 1</h3>
+      <p>Program that explores frequency analysis of large text files and produces a visual way of presenting analytic results.</p>
+    </div>
+    <div class="col-sm-3">
+      <h3>Spec 2</h3>
+      <p>Image manipulation that modifies a selection of images of various sizes and file formats and converts them to JPEG thumbnails, with user input.</p>
+    </div>
+    <div class="col-sm-3">
+      <h3>Spec 3</h3>
+      <p>Web application that presents the code written in the given specifications.</p>
+    </div>
+    <div class="col-sm-3">
+      <h3>Spec 4</h3>
+      <p>A program using a Python library not mentioned/used in the previous challenges or tasks.</p>
+    </div>
+  </div>
+</div>
+
+
+{% block content %}{% endblock %}
+</body>
+
+</html>
