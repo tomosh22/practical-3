@@ -2,7 +2,7 @@ from os import listdir
 from filter import filter
 from thumbnail import thumbnail
 
-if __name__ ==  "__main__":
+if __name__ == "__main__":
     images = []
     for img in listdir("../resources/img/spec2-images"):
         images.append("../resources/img/spec2-images/"+img)
