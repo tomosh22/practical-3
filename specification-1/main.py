@@ -12,6 +12,7 @@ def main():
         print("3) Specify the character set used within the text file you wish to use")
         print("|Recommended to use 'utf-8'|utf-8|ascii|utf-16|utf-32|")
         encoding = str(input("Enter character-set-encoding: "))
+        f = open(filename, "r", encoding=encoding)
         try:
             f = open(filename,"r",encoding=encoding)
         except FileNotFoundError:
@@ -42,7 +43,7 @@ def main():
 
     def removeUselessChars(theString):
         # Removes punctuation and replaces upper case with lower case letters for an accurate word count
-        removePunc = [".", "?", "!", "...", ":", ";", ",","(",")","[","]","—","_","-","—“","“","”","‘","#"]
+        removePunc = [".", "?", "!", "...", ":", ";", ",","(",")","[","]","—","_","-","—“","“","”","‘","#","’","/"]
         for iremove in range(0,len(removePunc)):
             theString = theString.replace(removePunc[iremove],"")
         removeUpperCase = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l"
@@ -64,6 +65,7 @@ def main():
                         theArray[i2] = ""
                         tempCount += 1
                 theInfoArray.append([tempWord,tempCount])
+        print(theInfoArray)
         BubbleSort(theInfoArray)
 
     def BubbleSort(theInfoArray):
