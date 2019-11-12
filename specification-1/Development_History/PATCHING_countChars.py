@@ -19,33 +19,21 @@ def main():
             print("\nERROR: Encoding not found, please try again.\n")
             parse()
         theString = f.read()
-        #return(theString)
         countChars(theString)
-        #=====================================================================================
 
     def countChars(theString):
         # OBJECTIVE 2 - Frequency analysis of the characters within the text file using .count()
-        A = theString.count("A"); a = theString.count("a"); B = theString.count("B"); b = theString.count("b")
-        C = theString.count("C"); c = theString.count("c"); D = theString.count("D"); d = theString.count("d")
-        E = theString.count("E"); e = theString.count("e"); F = theString.count("F"); f = theString.count("f")
-        G = theString.count("G"); g = theString.count("g"); H = theString.count("H"); h = theString.count("h")
-        I = theString.count("I"); i = theString.count("i"); J = theString.count("J"); j = theString.count("j")
-        K = theString.count("K"); k = theString.count("k"); L = theString.count("L"); l = theString.count("l")
-        M = theString.count("M"); m = theString.count("m"); N = theString.count("N"); n = theString.count("n")
-        O = theString.count("O"); o = theString.count("o"); P = theString.count("P"); p = theString.count("p")
-        Q = theString.count("Q"); q = theString.count("q"); R = theString.count("R"); r = theString.count("r")
-        S = theString.count("S"); s = theString.count("s"); T = theString.count("T"); t = theString.count("t")
-        U = theString.count("U"); u = theString.count("u"); V = theString.count("V"); v = theString.count("v")
-        W = theString.count("W"); w = theString.count("w"); X = theString.count("X"); x = theString.count("x")
-        Y = theString.count("Y"); y = theString.count("y"); Z = theString.count("Z"); z = theString.count("z")
-        fullstop = theString.count("."); comma = theString.count(","); hyphen = theString.count("-")
-        space = theString.count(" "); newline = theString.count("\n"); ePoint = theString.count("!"); Qmark = theString.count("?")
-        apostrophe = theString.count("'"); elipses = theString.count("..."); colon = theString.count(":")
-        semiColon = theString.count(";")
-        ''' Two categorised arrays store the quantities for later manipulation throughout the program '''
-        alphabet = [A,a,B,b,C,c,D,d,E,e,F,f,G,g,H,h,I,i,J,j,K,k,L,l,M,m,N,n,O,o,P,p,Q,q,R,r,S,s,T,t,U,u,V,v,W,w,X,x,Y,y,Z,z,]
-        punctuation = [space,newline,fullstop,comma,hyphen,ePoint,Qmark,apostrophe,elipses,colon,semiColon]
-        #return alphabet, punctuation
+        alphabet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        countLetters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l",
+        "M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"]
+        for i in range(0,len(alphabet)):
+            alphabet[i] = theString.count(countLetters[i])
+
+        punctuation = [0,0,0,0,0,0,0,0,0,0,0]
+        countPunctuation = [" ","\n",".",",","-","!","?","'","...",":",";"]
+        for i in range(0,len(punctuation)):
+            punctuation[i] = theString.count(countPunctuation[i])
+
         removeUselessChars(theString)
         plot(alphabet, punctuation)
 
@@ -59,7 +47,6 @@ def main():
         for iremove in range(0,len(removeUpperCase),2):
             theString = theString.replace(removeUpperCase[iremove],removeUpperCase[iremove+1])
         theArray = theString.split()
-        #return theArray
         wordCount(theArray)
 
     def wordCount(theArray):
@@ -73,10 +60,7 @@ def main():
                         theArray[i2] = ""
                         tempCount += 1
                 theInfoArray.append([tempWord,tempCount])
-        #return theInfoArray
         BubbleSort(theInfoArray)
-
-        #=====================================================================================
 
     def BubbleSort(theInfoArray):
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
@@ -96,12 +80,12 @@ def main():
             topTen[loop][0] = temp[0]
             topTen[loop][1] = temp[1]
             temp[1] = 0
-        #return topTen
         csvWrite(topTen)
 
     def csvWrite(topTen):
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
-        # Following functions are used from "library csv" found @ and credit to https://docs.python.org/3/library/csv.html
+        # Following functions are used from "library csv"
+        # found @ and credit to https://docs.python.org/3/library/csv.html
         max = len(topTen)-1
         with open("test.csv", "w", newline="") as csvfile:
             writer = csv.writer(csvfile, delimiter=" ",
@@ -116,8 +100,6 @@ def main():
             writer.writerow([topTen[max-2][0]] + [topTen[max-2][1]])
             writer.writerow([topTen[max-1][0]] + [topTen[max-1][1]])
             writer.writerow([topTen[max][0]] + [topTen[max][1]])
-
-        #===================================================================================
 
     def plot(alphabet, punctuation):
         # OBJECTIVE 4 - Visually representing character frequency analysis via MATPLOTLIB
