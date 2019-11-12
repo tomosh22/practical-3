@@ -4,9 +4,11 @@ import matplotlib.pyplot as plt
 def main():
     def parse():
         # OBJECTIVE 1 - Reading a text file and parsing the contents to a STRING and an ARRAY
+        # User specifies text file and encoding. Specified file's content is parsed.
         print("1) Place a text file within the same directory as this python file")
         print("2) Specify the file by inputting the name with the file extension")
         filename = str(input("Enter filename: "))
+        print("NOTE: Top ten words are written to a csv file named 'topten.csv'.")
         print("3) Specify the character set used within the text file you wish to use")
         print("|Recommended to use 'utf-8'|utf-8|ascii|utf-16|utf-32|")
         encoding = str(input("Enter character-set-encoding: "))
@@ -23,6 +25,7 @@ def main():
 
     def countChars(theString):
         # OBJECTIVE 2 - Frequency analysis of the characters within the text file using .count()
+        # Counts letters and punctuation
         alphabet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         countLetters = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l",
         "M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"]
@@ -38,6 +41,7 @@ def main():
         plot(alphabet, punctuation)
 
     def removeUselessChars(theString):
+        # Removes punctuation and replaces upper case with lower case letters for an accurate word count
         removePunc = [".", "?", "!", "...", ":", ";", ",","(",")","[","]","—","_","-","—“","“","”","‘","#"]
         for iremove in range(0,len(removePunc)):
             theString = theString.replace(removePunc[iremove],"")
@@ -50,6 +54,7 @@ def main():
         wordCount(theArray)
 
     def wordCount(theArray):
+        # Counts each word, the word and count is stored within a 2D array
         theInfoArray = []
         for i in range(0,len(theArray)):
             tempCount = 0
@@ -64,6 +69,7 @@ def main():
 
     def BubbleSort(theInfoArray):
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
+        # The 2D array storing words and quantity is bubble sorted but only the top ten for efficiency
         topTen = [["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0]]
         temp = ["",0]
         temp[0] = theInfoArray[0][0]
@@ -86,8 +92,9 @@ def main():
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
         # Following functions are used from "library csv"
         # found @ and credit to https://docs.python.org/3/library/csv.html
+        # Top ten words are written to a csv file
         max = len(topTen)-1
-        with open("test.csv", "w", newline="") as csvfile:
+        with open("topten.csv", "w", newline="") as csvfile:
             writer = csv.writer(csvfile, delimiter=" ",
                                     quotechar="|", quoting=csv.QUOTE_MINIMAL)
             writer.writerow([topTen[max-9][0]] + [topTen[max-9][1]])
@@ -105,6 +112,7 @@ def main():
         # OBJECTIVE 4 - Visually representing character frequency analysis via MATPLOTLIB
         # Following functions are used from "matplotlib"
         # found @ and credit to https://matplotlib.org/tutorials/introductory/pyplot.html
+        # Character analysis is plotted
         alphabetNames = ["A","a","B","b","C","c","D","d","E","e","F","f","G","g","H","h","I","i","J","j","K","k","L","l"
                 ,"M","m","N","n","O","o","P","p","Q","q","R","r","S","s","T","t","U","u","V","v","W","w","X","x","Y","y","Z","z"]
         alphabetValues = alphabet
@@ -124,3 +132,4 @@ def main():
     parse()
 
 main()
+
