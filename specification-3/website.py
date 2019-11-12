@@ -9,9 +9,7 @@ from flask import render_template
 @app.route('/')
 def home():
     return render_template('homepage.html',
-                           title='Home',
-                           general_page_description='Welcome to the homepage of our website for our project.'
-                                                    'You can use the navigation bar to find code for each assessment')
+                           title='Team 23: Home',)
 @app.route('/assessment_one')
 def assessment_one():
     code = open('a1code.txt', 'r+')
