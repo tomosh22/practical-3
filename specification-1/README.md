@@ -9,24 +9,27 @@ set, the corresponding character set must be specified in order to validly parse
 Within this section the user must specify the text file's name and encoding, I used try-catch-exceptions so that if the  
 user enters incorrect data the program simply starts again. This is true if the user enters an incompatible encoding with a  
 text file, the program no longer crashes it simply returns an error message and starts the program again. This is also  
-true if the user enters an invalid encoding set or text file name. 
+true if the user enters an encoding set that does not exist or text file name that does not exist. 
 
 ###2 Perform a frequency analysis of the characters and words in the text file.
 
 In order for my program to perform a frequency analysis of the characters I simply used .count() to assign  
-the quantity of a specified letter to a variable name that corresponds to the character it tracks, for all upper  
+the quantity of a specified letter to values in an array to be later used for plotting, this extends to all upper  
 and lower case letters, along with punctuation.  
 Interestingly, the program treats "right" and "right." as two different words because of the full-stop in the  
 second word. This needed to be fixed as it was leading to inaccurate word counts. Hence the next block of code  
 removes most punctuation, some are not removed due to them being apart of the word i.e "can't". This behaviour of  
 inaccurate word counts also applies to upper and lower case letters such that "Right" and "right" are also different.  
-Therefore upper-case letters had to be replaced with lower case letters - how this is achieved is explained as a  
-multi-line comment within the code itself. Once these two steps have been executed a new array is then derived    
-from this array, which contains each word as an element of the new array. Using .split() to achieve this.  
+Therefore upper-case letters had to be replaced with lower case letters - this is achieved by using an array of upper  
+and lower case letters, the for loop only looks at upper case letters by incrementing by 2 each time so if a character  
+in the string matches a character specified by the for loop, the character is always replaced with the corresponding 
+lowercase character.  
+The next step is, punctuation, this is simply replaced with nothing. Once these two steps have been executed a new array is then derived    
+from this string, which contains each word as an element of the new array. Using .split() to achieve this.  
 Lastly a word count is executed using the new array containing each word, this is achieved by using a nested for  
-loop. Which firstly selects the word, then iterates through the entire array increasing a counter each time a  
-duplicate word is found. This counter and the word being counted when the nested for loop has finished searching for  
-duplicates is then added to another 2D array to then be manipulated later in the program. 
+loop. Which firstly selects the word, then iterates through the entire array increasing a counter each time the same  
+ word is found. This counter and the word being counted, when the nested for loop has finished searching for  
+duplicates the word and count is then added to a 2D array to be manipulated later in the program. 
 
 ###3 Output the frequency of the most occurring words in the text file to a CSV file.
 To write the most frequent words to a CSV file I first needed a way of calculating the most frequent words.  
@@ -41,7 +44,7 @@ quite a bit from. At the time whenever I ran the "ObjectivesMet4.py" which plots
 incorrect this is evident because when this is ran on the text file I wrote, it returns 255 "commas" despite there being only 1.  
 Furthermore when this is run on the STAR WARS script it returns around 30,000 "commas" which is also wrong. Interestingly,  
 upon removing the "count" for "commas" the error then moves onto "full stops". Upon further investigation the bug was tracked  
-all the way back to version "ObjectivesMet2.py" Another step I took was to determine, is this problem also within the alphabet  
+all the way back to version "ObjectivesMet2.py" Another step I took, was to determine a fact, is this problem also within the alphabet  
 characters or only in the punctuation characters. To determine this fact, I separated alphabet-character and punctuation-characters  
 into different arrays. Then checked if the values for each element of each array is correct. Upon doing so I realized that   
 1 ~ When I told the program to count spaces, it was not, this is because I did not specify to count spaces, but instead  
