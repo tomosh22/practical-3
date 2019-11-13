@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 def main():
 
-
     def parse():
         # OBJECTIVE 1 - Reading a text file and parsing the contents to a STRING and an ARRAY
         # User specifies text file and encoding. Specified file's content is parsed.
@@ -77,7 +76,7 @@ def main():
 
     def BubbleSort(theInfoArray):
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
-        # The 2D array storing words and quantity is bubble sorted but only the top ten elements for efficiency
+        # The 2D array storing words and quantity is bubble sorted, but only the top ten elements for efficiency
         topTen = [["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0]]
         temp = ["",0]
         temp[0] = theInfoArray[0][0]

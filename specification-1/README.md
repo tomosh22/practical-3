@@ -1,4 +1,5 @@
 ##Produce a Markdown file in your repository directory that combines your findings in one place.
+
 ###1 Read in a .txt file and parse the content.
 From previous experience during A-level I knew that I could use the method ".open()" in order to retrieve data from  
 a text file. However at the time of doing this, I was not using the provided text document but instead my own created  
