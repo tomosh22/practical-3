@@ -2,11 +2,7 @@
 ##
 
 ### How to use programme
-* run main.py - command below shows how to run in terminal
-```
-pipenv run python specification-2
-```
-
+* run main.py
 * Terminal should give option on whether you want to add a filter on pictures or see thumbnails, input f for filter and 
 t for thumbnail
 * If t is inputted terminal will display a list of pictures to choose from to preview
