@@ -1,4 +1,22 @@
 ### Specification 2
+##
+
+### How to use programme
+* run main.py - command below shows how to run in terminal
+```
+pipenv run python specification-2
+```
+
+* Terminal should give option on whether you want to add a filter on pictures or see thumbnails, input f for filter and 
+t for thumbnail
+* If f is inputted terminal will display a list of pictures to choose from to add a filter on, input the picture number only
+to select picture
+* Terminal will then output a range of filters to choose from, to select filter input the character/characters before 
+the colon and only choose one of them
+* The image you placed a filter on should be saved and shown on users machine
+  
+
+### Specification
 
 In this challenge, you are going to be exploring image manipulation
 using the Pillow Python library. Write a program that modifies a

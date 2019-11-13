@@ -1,6 +1,5 @@
 from PIL import Image, ImageFilter
 
-
 def get_pixel(image, i, j):
   # Inside image bounds?
   width, height = image.size
@@ -12,7 +11,7 @@ def get_pixel(image, i, j):
   return pixel
 
 
-def convert_primary(image):
+def primary(image):
   # Get size
   image = Image.open(image)
   width, height = image.size
@@ -53,7 +52,7 @@ def convert_primary(image):
   return image
 
 # Create a Grayscale version of the image
-def convert_grayscale(image):
+def greyscale(image):
   # Get size
   image = Image.open(image)
   width, height = image.size
@@ -62,7 +61,7 @@ def convert_grayscale(image):
   #new = create_image(width, height)
   pixels = image.load()
 
-  # Transform to grayscale
+#  Transform to grayscale
   for i in range(width):
     for j in range(height):
       # Get Pixel
@@ -79,7 +78,7 @@ def convert_grayscale(image):
       # Set Pixel in new image
       pixels[i, j] = (int(gray), int(gray), int(gray))
 
-  # Return new image
+ # Return new image
   return image
 
 def filter(img):
@@ -120,9 +119,9 @@ def filter(img):
     elif filter == "sm+":
         image = image.filter(ImageFilter.SMOOTH_MORE)
     elif filter == "g":
-        image = Image.open(img).convert('L')
+        image = greyscale(img)
     elif filter == "p":
-        image = convert_primary(img)
+        image = primary(img)
     new_name = ".." + img[2:].split(".")[0] + filter + ".jpg"
     print(new_name)
     image.save(new_name, "JPEG")
