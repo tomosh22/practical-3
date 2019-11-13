@@ -182,7 +182,6 @@ def main():
         plt.bar(punctuationNames,punctuationValues)
         plt.suptitle('Punctuation Characters Plotted')
 
-        plt.show()
 
     parse()
 

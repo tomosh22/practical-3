@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2623fd68b722a972d6736077b034d45efe49ad8ef2dd1eda978e21d07cdf891b"
+            "sha256": "575f3877cc0221a1a33865651125ec1bb14c3f68e255101c39c34fd607483d47"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,13 @@
         ]
     },
     "default": {
+        "appjar": {
+            "hashes": [
+                "sha256:0dbd7ce2cb640392cb33ff94fad7318c7b7f2ba3fe111e2ca35cbf119acbda97"
+            ],
+            "index": "pypi",
+            "version": "==0.94.0"
+        },
         "click": {
             "hashes": [
                 "sha256:2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13",
