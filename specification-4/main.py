@@ -23,6 +23,7 @@ if __name__ == "__main__":
 
 
     addFrame = Frame(window,borderwidth=10,highlightcolor="black",highlightbackground="black",highlightthickness=1)
+    addTextInstruct = Label(addFrame,text="Input values seperated by commas, e.g '1,2,3,4'")
     addTextName = Entry(addFrame, width=5)
     addTextNameLabel = Label(addFrame, text="Set Name")
     addTextSet = Entry(addFrame, width=30)
@@ -30,9 +31,10 @@ if __name__ == "__main__":
     addButton = Button(addFrame, width=10, command=lambda:add(addTextName,addTextSet,listText,sets), text="Add Set")
     addTextNameLabel.grid(row=0, column=0)
     addTextName.grid(row=0, column=1)
-    addTextSetLabel.grid(row=1, column=0)
-    addTextSet.grid(row=1, column=1)
-    addButton.grid(row=2, column=0)
+    addTextInstruct.grid(row=1,column=0)
+    addTextSetLabel.grid(row=2, column=0)
+    addTextSet.grid(row=2, column=1)
+    addButton.grid(row=3, column=0)
 
     cartFrame = Frame(window)
     cartList = Text(cartFrame, width=50,height=10)
@@ -41,12 +43,14 @@ if __name__ == "__main__":
     cartList.grid(row=1,column=0)
 
     calcCart = Frame(window,borderwidth=10,highlightcolor="black",highlightbackground="black",highlightthickness=1)
+    calcInstruct = Label(calcCart,text="Input sets seperated by commas, e.g 'a,b,c'")
     calcLabel = Label(calcCart,text="Cartesian Sets")
     calcText = Entry(calcCart,width = 10)
     calcButton = Button(calcCart,command=lambda:calc(sets, calcText.get().split(","),cartList),text="Calculate Cartesian Product")
-    calcLabel.grid(row=0,column=0)
-    calcText.grid(row=0,column=1)
-    calcButton.grid(row=1,column=0)
+    calcInstruct.grid(row=0,column=0)
+    calcLabel.grid(row=1,column=0)
+    calcText.grid(row=1,column=1)
+    calcButton.grid(row=2,column=0)
 
     listFrame.grid(row=0, column=0)
     addFrame.grid(row=0, column=1)
