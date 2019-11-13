@@ -7,11 +7,9 @@ it did not work on the first try. This caused me to have to learn something new,
 .open() method, such that when a text file is opened the characters within the text file are from a certain character  
 set, the corresponding character set must be specified in order to validly parse the contents, hence, the encoding.  
 Within this section the user must specify the text file's name and encoding, I used try-catch-exceptions so that if the  
-user enters incorrect data the program simply starts again. However this is not true if the user enters an  
-incompatible encoding with a text file, the program crashes - this is because a try-catch-exception cannot be used in  
-this case because an error is not returned from the line of code within the try-catch-exception that is executed,  
-but instead the error is returned from another python file where the character set is contained separate from my own  
-creation. Lastly the contents of the text file is stored within a string for later manipulation.
+user enters incorrect data the program simply starts again. This is true if the user enters an incompatible encoding with a  
+text file, the program no longer crashes it simply returns an error message and starts the program again. This is also  
+true if the user enters an invalid encoding set or text file name. 
 
 ###2 Perform a frequency analysis of the characters and words in the text file.
 
