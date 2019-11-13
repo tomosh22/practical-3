@@ -10,9 +10,11 @@ def add(name,values,text,sets):
     values.delete(0,"end")
 
 def calc(sets,set_ids,cartList):
+    cartList.delete(1.0,"end")
     cartList.insert(END,cart_product(sets,set_ids))
 if __name__ == "__main__":
     window = Tk()
+    window.title("Cartesian Product Calculator")
     sets = []
 
     listFrame = Frame(window)
