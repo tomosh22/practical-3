@@ -70,7 +70,7 @@ def main():
 
     def BubbleSort(theInfoArray):
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
-        # The 2D array storing words and quantity is bubble sorted but only the top ten for efficiency
+        # The 2D array storing words and quantity is bubble sorted but only the top ten elements for efficiency
         topTen = [["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0],["",0]]
         temp = ["",0]
         temp[0] = theInfoArray[0][0]
