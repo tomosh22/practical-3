@@ -43,9 +43,9 @@ def main():
         except FileNotFoundError:
             print("\nERROR: File not found, please try again.\n")
             parse()
-        #except LookupError:
-            #print("\nERROR: Encoding not found, please try again.\n")
-            #parse()
+        except LookupError:
+            print("\nERROR: Encoding not found, please try again.\n")
+            parse()
         except UnicodeDecodeError:
             print("\nERROR: Incompatible encoding used, please try again with a different encoding.\n")
             parse()
