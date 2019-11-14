@@ -43,9 +43,9 @@ def main():
         except FileNotFoundError:
             print("\nERROR: File not found, please try again.\n")
             parse()
-        except LookupError:
-            print("\nERROR: Encoding not found, please try again.\n")
-            parse()
+        #except LookupError:
+            #print("\nERROR: Encoding not found, please try again.\n")
+            #parse()
         except UnicodeDecodeError:
             print("\nERROR: Incompatible encoding used, please try again with a different encoding.\n")
             parse()
@@ -146,10 +146,10 @@ def main():
                 if tempCount != 0:
                     topTen.append([tempWord,tempCount])
                 tempCount = 0
-        csvWrite(topTen,quantityOfMostFrequent)
+        csvWrite(topTen)
 
 
-    def csvWrite(topTen,quantityOfMostFrequent):
+    def csvWrite(topTen):
         print("PROGRESS: Writing top most used words to a CSV file")
         # OBJECTIVE 3 - Writing top 10 most used words to a CSV file
         # Following functions are used from "library csv"
@@ -159,7 +159,7 @@ def main():
         with open("topWords.csv", "w", newline="") as csvfile:
             writer = csv.writer(csvfile, delimiter=" ",
                                     quotechar="|", quoting=csv.QUOTE_MINIMAL)
-            for i in range(0,quantityOfMostFrequent):
+            for i in range(0,len(topTen)):
                 writer.writerow([topTen[i][0]] + [topTen[i][1]])
 
 
