@@ -1,16 +1,16 @@
 # How to use Program
-0) This program returns the quantity of each character A to Z and the most used words within a text file
-1) Firstly place a text file you wish to be analysed within the folder named "specification-1"
-2) A prompt will ask you to enter the file's name, this includes the name and extension to be inputted
-3) Each text file uses a character set, enter the name of the character set used within your text file
-4) This program will write the most used words to a csv file, you will be prompted to specify the number of words to be written
-5) a) You may or may not create a custom graph if you wish to simply type in "y" or "Y"
-5) b) Upon doing so you will see a list of characters you can specify to be plotted on your custom graph
-5) c) Simply type in a single character within the prompt, like so "Enter a single character: f"
-5) d) Then press enter, the same prompt will re-appear "Enter a single character:"
-5) e) From here either type another character you wish to see on your custom graph
-5) f) Or type "STOP" and then program will proceed to create the default graph along with your custom graph
-5) g) Inputting invalid characters will simply be filtered out instead of the program crashing
+* This program returns the quantity of each character A to Z and the most used words within a text file
+* Firstly place a text file you wish to be analysed within the folder named "specification-1"
+* A prompt will ask you to enter the file's name, this includes the name and extension to be inputted
+* Each text file uses a character set, enter the name of the character set used within your text file
+* This program will write the most used words to a csv file, you will be prompted to specify the number of words to be written
+* You may or may not create a custom graph, if you do wish to simply type in "y" or "Y"
+*   Upon doing so you will see a list of characters you can specify to be plotted on your custom graph
+*   A prompt will appear "Enter a single character:" follow the instructions, i.e "Enter a single character: f"
+*   Then press enter, the same prompt will re-appear "Enter a single character:"
+*   From here either type another character you wish to see on your custom graph
+*   Or type "STOP" and then program will proceed to create the default graph along with your custom graph
+*   Inputting invalid characters will simply be filtered out instead of the program crashing
 
 ## Produce a Markdown file in your repository directory that combines your findings in one place.
 
