@@ -12,9 +12,9 @@
 5) f) Or type "STOP" and then program will proceed to create the default graph along with your custom graph
 5) g) Inputting invalid characters will simply be filtered out instead of the program crashing
 
-##Produce a Markdown file in your repository directory that combines your findings in one place.
+## Produce a Markdown file in your repository directory that combines your findings in one place.
 
-###1 Read in a .txt file and parse the content.
+### 1 Read in a .txt file and parse the content.
 From previous experience during A-level I knew that I could use the method ".open()" in order to retrieve data from  
 a text file. However at the time of doing this, I was not using the provided text document but instead my own created  
 text files. As a result, near the end of development for this program, when I discovered the provided text document  
@@ -26,7 +26,7 @@ user enters incorrect data the program simply starts again. This is true if the 
 text file, the program no longer crashes it simply returns an error message and starts the program again. This is also  
 true if the user enters an encoding set that does not exist or text file name that does not exist. 
 
-###2 Perform a frequency analysis of the characters and words in the text file.
+### 2 Perform a frequency analysis of the characters and words in the text file.
 
 In order for my program to perform a frequency analysis of the characters I simply used .count() to assign  
 the quantity of a specified letter to values in an array to be later used for plotting, this extends to all upper  
@@ -46,14 +46,14 @@ loop. Which firstly selects the word, then iterates through the entire array inc
  word is found. This counter and the word being counted, when the nested for loop has finished searching for  
 duplicates the word and count is then added to a 2D array to be manipulated later in the program. 
 
-###3 Output the frequency of the most occurring words in the text file to a CSV file.
+### 3 Output the frequency of the most occurring words in the text file to a CSV file.
 To write the most frequent words to a CSV file I first needed a way of calculating the most frequent words.  
 Since each unique word and word-count was stored in a 2D array I could simply use a bubble sort on the whole 2D array.  
 However this proved extremely inefficient, I was only writing the top ten most used words to a CSV file, hence I limited  
 the bubble sort to ten items which is much more faster than sorting the whole 2D array.  
 When it came to writing the top ten most used words, I simply used a CSV library, to write the top ten words. 
 
-###4 Present your frequency analysis of the characters visually using the Matplotlib plotting library.
+### 4 Present your frequency analysis of the characters visually using the Matplotlib plotting library.
 Lastly presenting the frequency analysis. This was very simple at first, however I ran into a problem which I learned  
 quite a bit from. At the time whenever I ran the "ObjectivesMet4.py" which plots the punctuation, the "comma"s return value is  
 incorrect this is evident because when this is ran on the text file I wrote, it returns 255 "commas" despite there being only 1.  
