@@ -21,6 +21,7 @@ def main():
             while quantityOfMostFrequent <= 0:
                 quantityOfMostFrequent = int(input("4) Enter desired quantity of most frequent words to be outputted: "))
 
+            # Optional custom graph
             temp = ""
             choice = ""
             optionalLabels = []
@@ -68,10 +69,9 @@ def main():
             punctuation[i] = theString.count(countPunctuation[i])
 
         removeUselessChars(theString, quantityOfMostFrequent)
-        plot(alphabet, punctuation)
-        optionalPlot(choice, optionalValues, countLetters, alphabet)
+        optionalPlot(choice, optionalValues, countLetters, alphabet, punctuation)
 
-    def optionalPlot(choice, optionalLabels, countLetters, alphabet):
+    def optionalPlot(choice, optionalLabels, countLetters, alphabet, punctuation):
         # Removes duplicates
         if choice == "Y" or choice == "y":
             for i in range(0,len(optionalLabels)):
@@ -91,10 +91,11 @@ def main():
                         optionalLabels.append(tempArray[i])
                         optionalValues.append(alphabet[i2])
         # Plots the custom bar chart
-            plt.figure(figsize=(19.20,10.80))
-            plt.bar(optionalLabels,optionalValues)
-            plt.suptitle('User-Specified Characters')
-            plt.show()
+            plot(alphabet, punctuation, optionalLabels, optionalValues)
+        else:
+            optionalLabels = []
+            optionalValues = []
+            plot(alphabet, punctuation, optionalLabels, optionalValues)
 
     def removeUselessChars(theString, quantityOfMostFrequent):
         print("PROGRESS: Removing redundant characters...")
@@ -162,7 +163,7 @@ def main():
                 writer.writerow([topTen[i][0]] + [topTen[i][1]])
 
 
-    def plot(alphabet, punctuation):
+    def plot(alphabet, punctuation, optionalLabels, optionalValues):
         # OBJECTIVE 4 - Visually representing character frequency analysis via MATPLOTLIB
         # Following functions are used from "matplotlib"
         # found @ and credit to https://matplotlib.org/tutorials/introductory/pyplot.html
@@ -181,6 +182,11 @@ def main():
         plt.figure(figsize=(19.20,10.80))
         plt.bar(punctuationNames,punctuationValues)
         plt.suptitle('Punctuation Characters Plotted')
+
+        if optionalLabels != []:
+            plt.figure(figsize=(19.20,10.80))
+            plt.bar(optionalLabels,optionalValues)
+            plt.suptitle('User-Specified Characters')
 
         plt.show()
 
