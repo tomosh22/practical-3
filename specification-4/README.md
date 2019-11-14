@@ -1,3 +1,17 @@
+### How to use
+
+## Inputting sets
+Input as many sets as you want in the top box by inputting a set name as a
+string and the set values as a string of values seperated by commas. For
+example if I wanted a set named letters that contained the first 4 letters of
+the alphabet I would put 'letters' in the Set Name box and 'a,b,c,d' in the
+Set values box and click Add Set
+## Calculating Cartesian Product
+Once you have inputted your desired sets, in the bottom box input the sets you
+wish to calculate the cartesian product of, seperated by commas. For example if
+I wanted to calculate the cartesian products of sets A and B, I would input
+'A,B' and click Calculate Cartesian Product
+
 ### Specification 4
 
 In this challenge it is up to you to choose a Python library that
