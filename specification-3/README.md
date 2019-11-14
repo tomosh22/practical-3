@@ -1,3 +1,7 @@
+### How to use
+
+Navigate through the website to locate the code for the four specifications.
+
 ### Specification 3
 
 In this challenge you are going to build a web application using a
