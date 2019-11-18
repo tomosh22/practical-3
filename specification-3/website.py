@@ -19,7 +19,7 @@ def assessment_one():
     file = open('a1documentation.txt', 'r+')
     documentation = file.read()
     file.close()
-    return render_template('index.html',
+    return render_template('base.html',
                            title='Assessment One',
                            general_page_description='This is the page for assessment one.',
                            code=displaycode,
@@ -34,7 +34,7 @@ def assessment_two():
     file = open('a2documentation.txt', 'r+')
     documentation = file.read()
     file.close()
-    return render_template('index.html',
+    return render_template('base.html',
                            title='Assessment Two',
                            general_page_description='This is the page for assessment two.',
                            code=displaycode,
@@ -49,7 +49,7 @@ def assessment_three():
     file = open('a3documentation.txt', 'r+')
     documentation = file.read()
     file.close()
-    return render_template('index.html',
+    return render_template('base.html',
                            title='Assessment Three',
                            general_page_description='This is the page for assessment three.',
                            code=displaycode,
@@ -64,7 +64,7 @@ def assessment_four():
     file = open('a4documentation.txt', 'r+')
     documentation = file.read()
     file.close()
-    return render_template('index.html',
+    return render_template('base.html',
                            title='Assessment Four',
                            general_page_description='This is the page for assessment four.',
                            code=displaycode,
